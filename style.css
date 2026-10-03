@@ -1,0 +1,110 @@
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+  background: linear-gradient(135deg, #6366f1, #8b5cf6);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 60px 16px;
+  color: #1f2937;
+}
+
+.app {
+  background: #fff;
+  width: 100%;
+  max-width: 480px;
+  border-radius: 16px;
+  padding: 28px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+h1 { text-align: center; margin-bottom: 20px; font-size: 1.8rem; }
+
+#todo-form { display: flex; gap: 8px; margin-bottom: 16px; }
+
+#todo-input {
+  flex: 1;
+  min-width: 0;
+  padding: 12px 14px;
+  border: 2px solid #e5e7eb;
+  border-radius: 10px;
+  font-size: 1rem;
+  outline: none;
+}
+#todo-input:focus { border-color: #6366f1; }
+
+button { cursor: pointer; font: inherit; border: none; }
+
+#todo-form button {
+  background: #6366f1;
+  color: #fff;
+  padding: 0 20px;
+  border-radius: 10px;
+  font-weight: 600;
+}
+#todo-form button:hover { background: #4f46e5; }
+
+.filters { display: flex; gap: 6px; justify-content: center; margin-bottom: 12px; }
+.filter {
+  background: #f3f4f6;
+  padding: 6px 14px;
+  border-radius: 999px;
+  font-size: 0.9rem;
+}
+.filter.active { background: #6366f1; color: #fff; }
+
+#todo-list { list-style: none; }
+
+#todo-list li {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 4px;
+  border-bottom: 1px solid #f3f4f6;
+}
+
+#todo-list input[type="checkbox"] { width: 18px; height: 18px; accent-color: #6366f1; cursor: pointer; }
+
+#todo-list .text { flex: 1; min-width: 0; overflow-wrap: anywhere; }
+#todo-list li.done .text { text-decoration: line-through; color: #9ca3af; }
+
+.delete {
+  background: none;
+  color: #ef4444;
+  font-size: 1.2rem;
+  opacity: 0.5;
+}
+.delete:hover { opacity: 1; }
+
+#todo-list li.empty { justify-content: center; color: #9ca3af; padding: 20px 0; border-bottom: none; }
+
+footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 16px;
+  font-size: 0.9rem;
+  color: #6b7280;
+}
+#clear-done { background: none; color: #6b7280; }
+#clear-done:hover { color: #ef4444; }
+#clear-done[hidden] { display: none; }
+
+footer { flex-wrap: wrap; gap: 8px; }
+.actions { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
+#delete-all { background: none; color: #ef4444; font-weight: 500; }
+#delete-all:hover { text-decoration: underline; }
+.confirm { display: flex; align-items: center; gap: 8px; color: #1f2937; }
+.confirm[hidden], #delete-all[hidden] { display: none; }
+.confirm button { padding: 4px 10px; border-radius: 6px; background: #f3f4f6; font-size: 0.85rem; }
+.confirm .yes { background: #ef4444; color: #fff; }
+.confirm .yes:hover { background: #dc2626; }
+
+.sr-only {
+  position: absolute; width: 1px; height: 1px;
+  overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap;
+}
+
+button:focus-visible, input:focus-visible { outline: 2px solid #6366f1; outline-offset: 2px; }

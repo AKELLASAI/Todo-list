@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My To-Do List</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="app">
+    <h1>My To-Do List</h1>
+
+    <form id="todo-form">
+      <label for="todo-input" class="sr-only">New task</label>
+      <input id="todo-input" type="text" placeholder="What needs to be done?" autocomplete="off" maxlength="200" />
+      <button type="submit">Add</button>
+    </form>
+
+    <div class="filters">
+      <button class="filter active" data-filter="all">All</button>
+      <button class="filter" data-filter="active">Active</button>
+      <button class="filter" data-filter="done">Done</button>
+    </div>
+
+    <ul id="todo-list"></ul>
+
+    <footer>
+      <span id="count">0 tasks left</span>
+      <div class="actions">
+        <button id="clear-done" type="button">Clear completed</button>
+        <button id="delete-all" type="button">Delete all</button>
+        <span id="confirm-delete" class="confirm" hidden>
+          Delete all tasks?
+          <button id="confirm-yes" type="button" class="yes">Yes, delete</button>
+          <button id="confirm-no" type="button">Cancel</button>
+        </span>
+      </div>
+    </footer>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
